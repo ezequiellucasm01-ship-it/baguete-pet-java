@@ -1,0 +1,28 @@
+# Compilação
+target/
+*.class
+*.jar
+*.war
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+
+# Dependências
+.classpath
+.project
+.settings/
+
+# Recursos locais
+mascote.png
+susto.png
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
