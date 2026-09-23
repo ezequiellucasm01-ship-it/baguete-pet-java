@@ -1,0 +1,30 @@
+name: Compilar Executável Java
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+
+    steps:
+    - name: Baixar o código do repositório
+      uses: actions/checkout@v4
+
+    - name: Configurar o Java JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: 'maven'
+
+    - name: Compilar o projeto com o Maven
+      run: mvn clean package
+
+    - name: Guardar o arquivo gerado
+      uses: actions/upload-artifact@v4
+      with:
+        name: BaguetePet-Windows
+        path: target/*.jar
+        
